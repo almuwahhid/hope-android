@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:background="@color/grey_100"
+        android:layout_height="match_parent"
+        tools:context="id.co.hope.app.main.profile.ProfileFragment">
+        <include layout="@layout/toolbar_logo"
+                 android:id="@+id/lay_toolbar"/>
+    <RelativeLayout
+            android:id="@+id/layProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp">
+
+
+        <RelativeLayout
+                android:id="@+id/lay_avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp">
+            <id.co.hope.utils.avatarview.views.AvatarView
+                    android:id="@+id/avatar"
+                    android:layout_width="@dimen/dimen_76dp"
+                    android:transitionName="image"
+                    android:layout_height="@dimen/dimen_76dp"
+                    app:av_border_color="@android:color/white"
+                    app:av_border_width="1dp"
+                    app:av_text_size_percentage="35" />
+            <!--<ImageView-->
+                    <!--android:id="@+id/img_badges"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_width="@dimen/dimen_32dp"-->
+                    <!--android:layout_height="@dimen/dimen_32dp"-->
+                    <!--android:padding="3dp"-->
+                    <!--android:src="@drawable/camera"-->
+                    <!--android:layout_alignParentRight="true" />-->
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/lay_avatar"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Memuat..."
+                    android:textColor="@color/grey_600"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            <LinearLayout
+                    android:id="@+id/lay_coin"
+                    android:layout_below="@+id/tv_nama"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <ImageView
+                        android:id="@+id/ic_coin"
+                        android:layout_width="@dimen/dimen_24dp"
+                        android:layout_height="@dimen/dimen_24dp"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_calendar" />
+
+                <TextView
+                        android:id="@+id/tv_umur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
+                        android:textSize="@dimen/dimen_12dp"
+                        android:layout_below="@+id/tv_nama"
+                        android:layout_toRightOf="@+id/ic_coin"
+                        android:text="Memuat..." />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/lay_badges"
+                    android:visibility="gone"
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/lay_coin"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <TextView
+                        android:id="@+id/tv_badges"
+                        android:textSize="@dimen/dimen_12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nama"
+                        android:layout_toRightOf="@+id/ic_coin"
+                        android:paddingTop="3dp"
+                        android:text="Memuat..." />
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:layout_width="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay_badges">
+                <ImageView
+                        android:layout_width="@dimen/dimen_24dp"
+                        android:layout_height="@dimen/dimen_20dp"
+                        android:layout_below="@+id/tv_nama"
+                        android:src="@drawable/ic_interview" />
+
+                <TextView
+                        android:id="@+id/tv_pekerjaan"
+                        android:textSize="@dimen/dimen_12dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_nama"
+                        android:layout_toRightOf="@+id/ic_coin"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
+
+                        android:text="Memuat..." />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/btn_edit"
+                style="@style/clickable"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_edit_black_24dp"
+                android:tint="@color/grey_500"
+                android:visibility="visible" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/lay_ubahpassword"
+            style="@style/clickable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="10dp">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/img_password"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_vpn_key_black_24dp" />
+
+        <TextView
+                android:id="@+id/tv_ubahpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_ubahpassword"
+                android:layout_toRightOf="@id/img_password"
+                android:text="Ubah Password"
+                android:textColor="@color/grey_700"
+                android:textStyle="bold" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_ubahpassword"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/img_ubahpassword"
+                android:layout_toRightOf="@id/img_password"
+                android:text="Ubah password aplikasi Anda"
+                android:textColor="@color/grey_400" />
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/img_ubahpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_chevron_right_black_24dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/lay_klasifikasisaya"
+            style="@style/clickable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="10dp">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/img_clasify"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_people_black_24dp" />
+
+        <TextView
+                android:id="@+id/tv_clasify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_clas"
+                android:layout_toRightOf="@id/img_clasify"
+                android:text="User Clasify and Comments"
+                android:textColor="@color/grey_700"
+                android:textStyle="bold" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_clasify"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/img_clas"
+                android:layout_toRightOf="@id/img_clasify"
+                android:text="Klasifikasi hasil survey Anda"
+                android:textColor="@color/grey_400" />
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/img_clas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_chevron_right_black_24dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/lay_hubungikonseler"
+            style="@style/clickable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white"
+            android:padding="10dp">
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/img_icon_biodata_logout"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_call_black_24dp" />
+
+        <TextView
+                android:id="@+id/txtBiodata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/img_chevron_biodata_logout"
+                android:layout_toRightOf="@id/img_icon_biodata_logout"
+                android:text="Hubungi Konseler"
+                android:textColor="@color/grey_700"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/txtSubBiodata_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtBiodata"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/img_chevron_biodata_logout"
+                android:layout_toRightOf="@id/img_icon_biodata_logout"
+                android:text="Berikan masukan kepada kami"
+                android:textColor="@color/grey_400" />
+
+        <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/img_chevron_biodata_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_chevron_right_black_24dp" />
+    </RelativeLayout>
+    <android.support.v7.widget.CardView
+            android:id="@+id/card_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="0dp">
+
+        <!--Logout-->
+        <RelativeLayout
+                android:id="@+id/lay_tentangaplikasi"
+                style="@style/clickable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:background="@color/white"
+                android:padding="10dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/img_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_info_black_24dp"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/tv_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/img_info"
+                    android:text="Tentang Aplikasi"
+                    android:textColor="@color/grey_700"
+                    android:textStyle="bold" />
+        </RelativeLayout>
+        <!--End Of Logout-->
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+            android:id="@+id/card_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="0dp">
+
+        <!--Logout-->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:background="@color/white"
+                android:padding="10dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/img_icon_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_power_settings_new_black_24dp"
+                    android:tint="@color/colorPrimary" />
+
+            <TextView
+                    android:id="@+id/txtLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toRightOf="@id/img_icon_login"
+                    android:text="Keluar"
+                    android:textColor="@color/grey_700"
+                    android:textStyle="bold" />
+        </RelativeLayout>
+        <!--End Of Logout-->
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

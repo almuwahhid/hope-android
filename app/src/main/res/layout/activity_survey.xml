@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_100"
+        tools:context="id.co.hope.app.survey.SurveyActivity">
+    <include layout="@layout/main_toolbar"/>
+    <android.support.v7.widget.CardView
+            app:cardElevation="@dimen/dimen_2dp"
+            app:cardCornerRadius="0dp"
+            app:cardBackgroundColor="@color/white"
+            app:contentPadding="@dimen/dimen_8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:gravity="center_vertical">
+            <ImageView android:layout_width="@dimen/dimen_12dp" android:layout_height="@dimen/dimen_12dp"
+                       android:src="@drawable/ic_calendar"/>
+            <TextView
+                    android:layout_marginLeft="@dimen/dimen_8dp"
+                    android:id="@+id/tv_date_survey"
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.Standard.Bold"
+                    android:text="20 Juni 2019"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <id.co.hope.utils.animation.AnimationToggle android:layout_width="match_parent"
+                                                    android:id="@+id/lay_pertanyaan"
+                                                    android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                                app:cardCornerRadius="@dimen/dimen_2dp"
+                                                app:cardElevation="@dimen/dimen_1dp"
+                                                app:cardBackgroundColor="@color/white"
+                                                app:contentPadding="@dimen/dimen_8dp"
+                                                android:layout_margin="@dimen/dimen_16dp"
+                                                android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                              android:orientation="horizontal">
+                    <android.support.v7.widget.CardView
+                            app:cardBackgroundColor="@color/colorPrimary"
+                            app:cardElevation="@dimen/dimen_2dp"
+                            app:cardCornerRadius="@dimen/dimen_12dp"
+                            android:layout_width="@dimen/dimen_24dp"
+                            android:layout_height="@dimen/dimen_24dp">
+                        <TextView
+                                android:id="@+id/tv_index"
+                                style="@style/Text.Title.OneRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                    </android.support.v7.widget.CardView>
+                    <TextView
+                            android:layout_marginLeft="@dimen/dimen_8dp"
+                            android:id="@+id/tv_pertanyaan"
+                            android:layout_width="match_parent"
+                            style="@style/Text.SubTitleField.Regular"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="5dp"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </id.co.hope.utils.animation.AnimationToggle>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_marginBottom="@dimen/dimen_16dp"
+                      android:layout_alignParentBottom="true">
+            <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                                    android:id="@+id/rv_options"
+                                                    android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </LinearLayout>
+        <id.co.hope.utils.animation.AnimationToggle android:layout_width="wrap_content"
+                                                    android:id="@+id/toggle_ok"
+                                                    android:paddingBottom="@dimen/dimen_16dp"
+                                                    android:visibility="gone"
+                                                    android:layout_height="wrap_content">
+            <android.support.design.widget.FloatingActionButton android:layout_width="wrap_content"
+                                                                android:id="@+id/fab_ok"
+                                                                android:layout_alignParentBottom="true"
+                                                                android:layout_margin="@dimen/dimen_16dp"
+                                                                android:layout_alignParentRight="true"
+                                                                android:layout_height="wrap_content"
+                                                                app:backgroundTint="@color/colorPrimary"
+                                                                android:src="@drawable/ic_check_black_24dp"
+                                                                android:tint="@color/white"/>
+        </id.co.hope.utils.animation.AnimationToggle>
+    </RelativeLayout>
+</LinearLayout>

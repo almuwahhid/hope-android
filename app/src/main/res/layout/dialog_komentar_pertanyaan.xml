@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/lay_dialog"
+    android:background="@drawable/bg_dialog"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:padding="@dimen/dimen_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="Berikan Alasanmu!"
+            style="@style/Text.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edt_komentar"
+            android:padding="12dp"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:background="@drawable/field_filled"
+            android:layout_width="match_parent"
+            android:ems="6"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:hint="Tulis alasan disini"
+            android:textSize="14sp"
+            android:lines="5"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:text="O K"
+            android:background="@drawable/button_main"
+            android:layout_marginTop="12dp"
+            android:layout_width="@dimen/dimen_128dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

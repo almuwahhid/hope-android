@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:padding="@dimen/dimen_8dp"
+        android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+    android:orientation="vertical">
+        <LinearLayout
+                android:layout_centerVertical="true"
+                android:id="@+id/lay_date"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:gravity="center"
+                android:orientation="vertical">
+            <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <android.support.v7.widget.CardView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            app:cardBackgroundColor="@color/colorPrimaryLight"
+                            app:cardElevation="@dimen/dimen_2dp"
+                            app:cardCornerRadius="@dimen/dimen_12dp"
+                            android:layout_width="@dimen/dimen_48dp"
+                            android:layout_height="@dimen/dimen_48dp">
+
+                        <TextView
+                                android:id="@+id/tv_date"
+                                style="@style/Text.Title.OneRow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/dimen_32dp"
+                                android:textStyle="bold" />
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:layout_alignParentRight="true"
+                              android:layout_alignParentBottom="true">
+                    <android.support.v7.widget.CardView
+                            app:cardCornerRadius="9dp"
+                            app:cardElevation="0dp"
+
+                            app:cardBackgroundColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <ImageView
+                                android:id="@+id/img_check"
+                                android:layout_width="@dimen/dimen_18dp"
+                                android:layout_height="@dimen/dimen_18dp"
+                                android:src="@drawable/ic_success"/>
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:id="@+id/tv_month_year"
+                android:textColor="@color/grey_400"
+                android:textStyle="bold"
+                android:text="Mei 2019"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Text.Title"/>
+    </LinearLayout>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:id="@+id/card_lay"
+                                        android:layout_marginLeft="@dimen/dimen_8dp"
+                                        android:layout_marginTop="@dimen/dimen_2dp"
+                                        android:layout_marginBottom="@dimen/dimen_2dp"
+                                        app:cardCornerRadius="@dimen/dimen_4dp"
+                                        app:contentPadding="@dimen/dimen_16dp"
+                                        app:cardElevation="@dimen/dimen_2dp"
+                                        app:cardBackgroundColor="@color/white"
+                                        style="@style/clickable"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        tools:context=".menu.main.adapter.AdapterTaskPertanyaan">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/tv_time"
+                    android:textColor="@color/grey_400"
+                    android:text="13:10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Text.Caption.Bold"/>
+            <TextView
+                    android:layout_below="@+id/tv_time"
+                    android:id="@+id/tv_content"
+                    android:layout_centerVertical="true"
+                    style="@style/Text.Standard"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel purus vel mauris fermentum lacinia a vitae neque. Morbi faucibus lectus diam, sit amet placerat tortor vulputate in. Duis euismod elit ac risus feugiat, a venenatis dui aliquet. In eget felis congue, pellentesque leo eu, vehicula ipsum. Integer sodales nunc nec lacus dictum facilisis. Aenean nibh nulla, efficitur sed lectus ut, rutrum dignissim ex. Proin lobortis lectus venenatis dolor faucibus, at scelerisque lacus molestie. Phasellus et neque vitae enim tempus ornare. Mauris rutrum varius accumsan. Duis diam metus, cursus sit amet ligula vulputate, euismod rhoncus enim. Phasellus vitae tristique dui. Nam nulla odio, pretium quis tellus sed, viverra dignissim dolor. Vestibulum elementum et mauris at lacinia. Sed quis nibh eu mi pharetra fringilla. Curabitur convallis, tellus sit amet pharetra venenatis, neque elit varius libero, vel tempor nisl libero id diam. Suspendisse potenti."
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

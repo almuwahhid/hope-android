@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/grey_100"
+        android:layout_height="match_parent"
+        tools:context="id.co.hope.app.greeting.GreetingActivity" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <!--<include layout="@layout/toolbar_logo"/>-->
+        <include layout="@layout/toolbar_logo_main"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <id.co.hope.utils.slider.SliderLayout android:layout_width="match_parent"
+                                              android:id="@+id/slider"
+                                              app:pager_animation="Fade"
+                                              android:layout_above="@+id/lay_login"
+                                              android:layout_height="match_parent">
+        </id.co.hope.utils.slider.SliderLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:padding="@dimen/dimen_16dp"
+                      android:id="@+id/lay_login"
+                      android:layout_alignParentBottom="true"
+                      android:orientation="vertical">
+            <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/btn_login"
+                    android:background="@drawable/button_main"
+                    android:text="L O G I N"
+                    android:textColor="@color/white"/>
+            <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:id="@+id/btn_register"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:background="@drawable/button_filled"
+                    android:text="R E G I S T E R"
+                    android:textColor="@color/grey_700"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

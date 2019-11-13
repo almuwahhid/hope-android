@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView android:layout_width="match_parent"
+                                        android:id="@+id/card_pertanyaan"
+                                        style="@style/clickable"
+                                        app:cardCornerRadius="@dimen/dimen_2dp"
+                                        app:cardElevation="@dimen/dimen_1dp"
+                                        app:contentPadding="@dimen/dimen_8dp"
+                                        app:cardBackgroundColor="@color/white"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginBottom="@dimen/dimen_2dp"
+                                        android:layout_marginLeft="@dimen/dimen_16dp"
+                                        android:layout_marginRight="@dimen/dimen_16dp"
+                                        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:gravity="center_vertical"
+                      android:orientation="horizontal">
+            <ImageView
+                    android:id="@+id/img_pertanyaan"
+                    style="@style/Text.Title.OneRow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_check_circle_black_24dp"/>
+            <TextView
+                    android:id="@+id/tv_pertanyaan"
+                    android:layout_marginLeft="@dimen/dimen_8dp"
+                    android:layout_width="match_parent"
+                    style="@style/Text.SubTitleField.Regular"
+                    android:text="Sangat Setuju"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

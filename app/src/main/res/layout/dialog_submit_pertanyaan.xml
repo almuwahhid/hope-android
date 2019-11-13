@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/lay_dialog"
+                android:background="@drawable/bg_dialog"
+    android:padding="@dimen/dimen_16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+            android:id="@+id/lay_top" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <ImageView
+                android:id="@+id/img_close"
+                android:clickable="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_close_black_24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="Task Intervensi"
+                  android:textColor="@color/colorPrimary"
+                  style="@style/Text.Standard.Bold"/>
+    </RelativeLayout>
+    <TextView
+        android:text="AKu Satu Dua Tiga"
+        android:textAlignment="center"
+        style="@style/Text.Title"
+        android:id="@+id/tv_taskintervensi"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_below="@+id/lay_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10dp"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:visibility="gone"
+                  android:id="@+id/lay_notyet"
+                  android:layout_marginTop="@dimen/dimen_8dp"
+                  android:layout_below="@+id/tv_taskintervensi"
+                  android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/tv_notyet"
+                android:textColor="@color/red_400"
+                android:text="*Belum waktunya"
+                style="@style/Text.Caption.Bold"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/lay_action"
+                  android:visibility="gone"
+            android:layout_below="@+id/tv_taskintervensi"
+            android:orientation="vertical">
+        <TextView
+                android:text="Apakah kamu sudah mengerjakan intervensi ini ?"
+                android:textAlignment="center"
+                style="@style/Text.Information.Regular"
+                android:id="@+id/tv_tanya"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:layout_below="@id/tv_tanya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <Button
+                    android:id="@+id/btn_no"
+                    android:text="TIDAK"
+                    android:background="@drawable/button_filled"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:layout_width="@dimen/dimen_140dp"
+                    android:layout_height="wrap_content" />
+            <Button
+                    android:id="@+id/btn_ya"
+                    android:textColor="@color/white"
+                    android:text="YA"
+                    android:background="@drawable/button_main"
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:layout_width="@dimen/dimen_140dp"
+                    android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+            android:visibility="gone"
+        android:layout_margin="@dimen/dimen_12dp"
+        android:layout_below="@+id/tv_taskintervensi"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn_ok"
+        android:textColor="@color/white"
+        android:text="OKE"
+        android:background="@drawable/button_main"
+        android:layout_width="@dimen/dimen_140dp"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

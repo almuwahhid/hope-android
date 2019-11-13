@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Edittext.Form" parent="EditText">
+        <item name="android:padding">@dimen/dimen_12dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:drawablePadding">@dimen/dimen_8dp</item>
+        <item name="android:drawableTint">@color/colorPrimary</item>
+        <item name="android:background">@drawable/field_filled</item>
+    </style>
+    <style name="Edittext.Form.Disable" parent="EditText">
+        <item name="android:padding">@dimen/dimen_12dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:drawablePadding">@dimen/dimen_8dp</item>
+        <item name="android:drawableTint">@color/grey_400</item>
+        <item name="android:background">@drawable/field_filled</item>
+    </style>
+</resources>

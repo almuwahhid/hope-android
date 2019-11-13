@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/grey_100"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="id.co.hope.app.tentangaplikasi.TentangAplikasiActivity">
+        <include layout="@layout/main_toolbar"
+                 android:id="@+id/toolbar_lay"/>
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <ImageView
+                    android:layout_width="@dimen/dimen_96dp"
+                    android:layout_height="@dimen/dimen_96dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimen_16dp"
+                    android:src="@drawable/ic_hope"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:background="@color/white"
+                android:padding="@dimen/dimen_16dp">
+                <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_width="match_parent"
+                        style="@style/Text.SubTitleField.Regular"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="5dp"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_16dp">
+
+                <TextView
+                        style="@style/Text.SubTitleField.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Version"/>
+
+                <TextView
+                        android:id="@+id/tv_version"
+                        style="@style/Text.TitleField.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1.0.0"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_16dp">
+
+                <TextView
+                        style="@style/Text.SubTitleField.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Name"/>
+
+                <TextView
+                        android:id="@+id/tv_nama"
+                        style="@style/Text.TitleField.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="H.O.P.E"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_16dp">
+
+                <TextView
+                        android:layout_gravity="center_horizontal"
+                        style="@style/Text.SubTitleField.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Copyright Chalida 2019"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
