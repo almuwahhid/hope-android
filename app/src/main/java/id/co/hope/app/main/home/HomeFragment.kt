@@ -135,7 +135,7 @@ class HomeFragment : FragmentPermission(), HomeView.View {
 
     override fun onGotoChecklist(surveyModel: SurveyModel, taskIntervensiModels: MutableList<TaskPertanyaanModel>) {
         tv_description.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nAnda memiliki list jurnal yang harus dikerjakan, yuk lihat sekarang...")
-        btn_survey.setText("Lihat Checklist Jurnal")
+        btn_survey.setText("Lihat Checklist Journal")
         btn_survey.setOnClickListener({
             viewModel.updateChecklistJournal(true)
         })
