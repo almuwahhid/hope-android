@@ -42,5 +42,15 @@
                 android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+        <TextView
+                android:layout_gravity="left"
+                android:layout_margin="@dimen/dimen_8dp"
+                style="@style/Text.Standard.Bold"
+                android:text="Komentar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
+                                                android:id="@+id/rv"
+                                                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
     </LinearLayout>
 </RelativeLayout>

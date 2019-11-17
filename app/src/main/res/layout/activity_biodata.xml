@@ -30,8 +30,8 @@
                         android:id="@+id/img_badges"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_width="@dimen/dimen_32dp"
-                        android:layout_height="@dimen/dimen_32dp"
+                        android:layout_width="@dimen/dimen_48dp"
+                        android:layout_height="@dimen/dimen_48dp"
                         android:padding="3dp"
                         android:src="@drawable/camera"
                         android:layout_alignParentRight="true" />

@@ -19,21 +19,6 @@ import kotlinx.android.synthetic.main.layout_helper.*
 import kotlinx.android.synthetic.main.main_toolbar.*
 
 class ArtikelActivity : HopeActivity(), HomeView.View {
-    override fun onGotoChecklist(surveyModel: SurveyModel, taskIntervensiModels: MutableList<TaskPertanyaanModel>) {
-
-    }
-
-    override fun onGotoSurvey(message_survey: String, message_button: String) {
-
-    }
-
-    override fun onFailed(message: String) {
-
-    }
-
-    override fun onCreateSurvey(surveyModel: SurveyModel) {
-
-    }
 
     var artikels: MutableList<ArtikelModel> = ArrayList()
     lateinit var adapterArtikel: ArtikelAdapter
@@ -90,5 +75,21 @@ class ArtikelActivity : HopeActivity(), HomeView.View {
             presenter.requestArtikel()
         }
         presenter.requestArtikel()
+    }
+
+    override fun onGotoChecklist(surveyModel: SurveyModel, taskIntervensiModels: MutableList<TaskPertanyaanModel>) {
+
+    }
+
+    override fun onGotoSurvey(message_survey: String, message_button: String) {
+
+    }
+
+    override fun onFailed(message: String) {
+
+    }
+
+    override fun onCreateSurvey(surveyModel: SurveyModel) {
+
     }
 }

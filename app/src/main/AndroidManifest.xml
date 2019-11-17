@@ -16,6 +16,8 @@
             android:roundIcon="@mipmap/ic_launcher"
             android:supportsRtl="true"
             android:theme="@style/ToolBarThemeMain">
+        <activity android:name=".dialogs.DialogDetailAchievement.adapter.DialogDetailAchievementAdapter">
+        </activity>
         <activity android:name=".app.fotopreview.FotoPreviewActivity">
         </activity>
         <activity android:name=".app.surveysaya.SurveySayaActivity">
