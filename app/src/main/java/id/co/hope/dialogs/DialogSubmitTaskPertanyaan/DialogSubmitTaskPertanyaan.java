@@ -69,7 +69,7 @@ public class DialogSubmitTaskPertanyaan extends DialogBuilder {
                 btn_no.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        onDialogSubmitPertanyaan.onSubmitTaskPertanyaan(taskIntervensiModel);
+//                        onDialogSubmitPertanyaan.onSubmitTaskPertanyaan(taskIntervensiModel);
                         new DialogKomentarPertanyaan(getContext(), new DialogKomentarPertanyaan.OnDialogKomentarPertanyaan() {
                             @Override
                             public void onSubmitKomentar(String komentar) {
@@ -97,7 +97,7 @@ public class DialogSubmitTaskPertanyaan extends DialogBuilder {
 //                tv_tanya.setText(taskIntervensiModel.getPertanyaan_intervensi());
 
                 if(taskIntervensiModel.getStatus_task().equals("N")){
-                    if(HopeFunction.isToday(taskIntervensiModel.getTanggal_task()).equals("today")){
+                    /*if(HopeFunction.isToday(taskIntervensiModel.getTanggal_task()).equals("today")){
                         lay_action.setVisibility(View.VISIBLE);
                         lay_notyet.setVisibility(View.GONE);
                     } else if(HopeFunction.isToday(taskIntervensiModel.getTanggal_task()).equals("yesterday")){
@@ -109,13 +109,15 @@ public class DialogSubmitTaskPertanyaan extends DialogBuilder {
                         lay_notyet.setVisibility(View.VISIBLE);
                         tv_notyet.setText("*Intervensi belum bisa ditandai");
                         tv_notyet.setTextColor(getActivity().getResources().getColor(R.color.grey_500));
-                    }
+                    }*/
+                    lay_action.setVisibility(View.VISIBLE);
+                    lay_notyet.setVisibility(View.GONE);
                 } else {
-                    if (taskIntervensiModel.getStatus_task() == "T") {
+                    if (taskIntervensiModel.getStatus_task().equals("T")) {
                         lay_action.setVisibility(View.GONE);
                         lay_notyet.setVisibility(View.VISIBLE);
                         tv_notyet.setText("*Kamu tidak menyetujui intervensi ini");
-                        tv_notyet.setTextColor(getActivity().getResources().getColor(R.color.red_400));
+                        tv_notyet.setTextColor(getActivity().getResources().getColor(R.color.grey_400));
                     } else {
                         lay_action.setVisibility(View.GONE);
                         lay_notyet.setVisibility(View.VISIBLE);

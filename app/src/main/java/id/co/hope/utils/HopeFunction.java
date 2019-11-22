@@ -112,6 +112,15 @@ public class HopeFunction {
         }
     }
 
+    public static String parseTimestampToSimpleFullDateTime(String data){
+        try {
+            String begin = data.split(" ")[0];
+            return begin.split("-")[2]+" "+ LibUi.monthName(Integer.valueOf(begin.split("-")[1])-1)+ " "+begin.split("-")[0].substring(2, 4)+" "+data.split(" ")[1];
+        } catch (Exception e){
+            return "";
+        }
+    }
+
     public static String parseDateToRealDate(String begin){
         try {
             return begin.split("-")[2]+" "+ LibUi.monthName(Integer.valueOf(begin.split("-")[1])-1)+ " "+begin.split("-")[0];

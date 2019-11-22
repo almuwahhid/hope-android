@@ -44,18 +44,21 @@ class ChecklistJournalAdapter(context: Context, list_intervensi: MutableList<Tas
         holder.tv_date!!.setText(HopeFunction.parseTimestampToSimpleDate(intervensiModel.tanggal_task))
         holder.tv_month_year!!.setText(HopeFunction.parseTimestampToSimpleMonthYear(intervensiModel.tanggal_task))
 
+        holder.tv_month_year!!.visibility = View.GONE
+        holder.tv_date!!.setText(""+(position+1))
 
         Log.d("adapters1 ", intervensiModel.status_task)
         if(intervensiModel.status_task.equals("N")){
             holder.tv_time!!.visibility = View.GONE
             Log.d("adapters ", HopeFunction.isToday(intervensiModel.tanggal_task))
-            if(HopeFunction.isToday(intervensiModel.tanggal_task).equals("today")){
+            /*if(HopeFunction.isToday(intervensiModel.tanggal_task).equals("today")){
                 holder.img_check!!.setImageResource(R.drawable.ic_play_rounded_button);
             } else if(HopeFunction.isToday(intervensiModel.tanggal_task).equals("yesterday")){
                 holder.img_check!!.setImageResource(R.drawable.ic_error);
             } else if(HopeFunction.isToday(intervensiModel.tanggal_task).equals("tomorrow")){
                 holder.img_check!!.setImageResource(R.drawable.ic_stop);
-            }
+            }*/
+            holder.img_check!!.setImageResource(R.drawable.ic_play_rounded_button);
         } else {
             Log.d("adapters2 ", intervensiModel.status_task)
 
@@ -67,7 +70,8 @@ class ChecklistJournalAdapter(context: Context, list_intervensi: MutableList<Tas
 
             holder.tv_time!!.visibility = View.VISIBLE
             try {
-                holder.tv_time!!.setText(intervensiModel.tanggal_submit.split(" ")[1])
+//                holder.tv_time!!.setText(intervensiModel.tanggal_submit.split(" ")[1])
+                holder.tv_time!!.setText(HopeFunction.parseTimestampToSimpleFullDateTime(intervensiModel.tanggal_submit))
             } catch (e: Exception){
                 e.printStackTrace()
             }

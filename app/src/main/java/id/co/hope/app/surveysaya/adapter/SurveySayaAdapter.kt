@@ -41,6 +41,7 @@ class SurveySayaAdapter (context: Context, list: MutableList<SurveyModel>, priva
         holder.tv_date!!.setText(HopeFunction.parseTimestampToSimpleDate(surveyModel.tanggal_survey))
         holder.tv_month_year!!.setText(HopeFunction.parseTimestampToSimpleMonthYear(surveyModel.tanggal_survey))
         holder.tv_title!!.setText(surveyModel.nama_status)
+        holder.tv_nilai!!.setText(surveyModel.nilai+" poin")
         holder.tv_desc!!.setText(surveyModel.deskripsi_status)
         when(surveyModel.id_status_identitas_religius){
             "1"->holder.img_medal!!.setImageResource(R.drawable.ic_medal_gold)
@@ -62,6 +63,7 @@ class SurveySayaAdapter (context: Context, list: MutableList<SurveyModel>, priva
     class Holder (itemView: View, viewType: Int) : RecyclerView.ViewHolder(itemView) {
         internal var tv_date: TextView? = null
         internal var tv_month_year: TextView? = null
+        internal var tv_nilai: TextView? = null
         internal var card_survey: CardView? = null
         internal var timeline: TimelineView? = null
         internal var tv_title: TextView? = null
@@ -72,6 +74,7 @@ class SurveySayaAdapter (context: Context, list: MutableList<SurveyModel>, priva
             tv_title = itemView.findViewById(R.id.tv_title)
             tv_date = itemView.findViewById(R.id.tv_date)
             tv_month_year = itemView.findViewById(R.id.tv_month_year)
+            tv_nilai = itemView.findViewById(R.id.tv_nilai)
             tv_desc = itemView.findViewById(R.id.tv_desc)
             card_survey = itemView.findViewById(R.id.card_survey)
             timeline = itemView.findViewById(R.id.timeline)

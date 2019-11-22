@@ -86,11 +86,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_gravity="right"
+                        android:id="@+id/tv_nilai"
+                        android:textColor="@color/colorPrimary"
+                        android:text="30 poin"
+                        style="@style/Text.Caption.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
                 <TextView
                         android:id="@+id/tv_title"
-                        android:textColor="@color/colorPrimary"
                         android:text="Achievment"
                         style="@style/Text.Standard.Bold"
                         android:layout_width="wrap_content"

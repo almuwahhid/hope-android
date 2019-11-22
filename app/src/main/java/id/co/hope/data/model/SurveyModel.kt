@@ -8,5 +8,6 @@ data class SurveyModel (var id_survey: String,
                         var tanggal_survey: String,
                         var nama_status: String = "",
                         var deskripsi_status: String = "",
+                        var nilai: String = "",
                         var komentar_aspek: MutableList<String> = ArrayList()
                         ) : Serializable
