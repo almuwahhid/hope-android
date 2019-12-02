@@ -30,13 +30,18 @@ public class DialogMinatPengguna extends DialogBuilder implements DialogMinatPen
     EditText edt_pekerjaanimpian;
     @BindView(R.id.edt_semester)
     EditText edt_semester;
+    @BindView(R.id.edt_universitas)
+    EditText edt_universitas;
     @BindView(R.id.btn_ok)
     Button btn_ok;
 
     DialogMinatPenggunaPresenter presenter;
 
-    public DialogMinatPengguna(Context context) {
+    UserModel userModel;
+
+    public DialogMinatPengguna(Context context, UserModel userModel) {
         super(context, R.layout.dialog_minat_pengguna);
+        this.userModel = userModel;
         ButterKnife.bind(this, getDialog());
 
         setAnimation(R.style.DialogBottomAnimation);
@@ -96,6 +101,7 @@ public class DialogMinatPengguna extends DialogBuilder implements DialogMinatPen
             UserModel userModel = HopeFunction.getUserPreference(getContext());
             userModel.setUserModel(
                     edt_programstudi.getText().toString(),
+                    edt_universitas.getText().toString(),
                     edt_semester.getText().toString(),
                     edt_pekerjaanimpian.getText().toString());
 
@@ -105,8 +111,14 @@ public class DialogMinatPengguna extends DialogBuilder implements DialogMinatPen
 
     ArrayList<Integer> forms = new ArrayList<>();
     private void setForms(){
+        edt_universitas.setText(userModel.getUniversitas());
+        edt_pekerjaanimpian.setText(userModel.getPekerjaan_impian());
+        edt_semester.setText(userModel.getSemester());
+        edt_programstudi.setText(userModel.getProgram_studi());
+
         forms.add(R.id.edt_programstudi);
         forms.add(R.id.edt_semester);
+        forms.add(R.id.edt_universitas);
         forms.add(R.id.edt_pekerjaanimpian);
     }
 }

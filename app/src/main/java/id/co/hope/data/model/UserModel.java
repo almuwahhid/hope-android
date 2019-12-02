@@ -3,7 +3,7 @@ package id.co.hope.data.model;
 import static lib.almuwahhid.utils.LibUi.monthName;
 
 public class UserModel {
-    public String id_user, email, password, nama, jenis_kelamin, tgl_lahir, program_studi, telp, confirmation_code, aktif, semester, photo_profil = "", pekerjaan_impian = "";
+    public String id_user, email, password, nama, jenis_kelamin, tgl_lahir, program_studi, telp, confirmation_code, aktif, semester = "", photo_profil = "", pekerjaan_impian = "", universitas = "";
 
     public UserModel() {
     }
@@ -46,18 +46,20 @@ public class UserModel {
         this.telp = telp;
     }
 
-    public void setUserModel(String nama, String jenis_kelamin, String program_studi, String telp, String semester, String pekerjaan_impian) {
+    public void setUserModel(String nama, String jenis_kelamin, String program_studi, String telp, String semester, String pekerjaan_impian, String universitas) {
         this.nama = nama;
         this.jenis_kelamin = jenis_kelamin;
         this.program_studi = program_studi;
         this.telp = telp;
         this.semester = semester;
         this.pekerjaan_impian = pekerjaan_impian;
+        this.universitas = universitas;
     }
 
-    public void setUserModel(String program_studi, String semester, String pekerjaan_impian) {
+    public void setUserModel(String program_studi, String universitas, String semester, String pekerjaan_impian) {
         this.program_studi = program_studi;
         this.semester = semester;
+        this.universitas = universitas;
         this.pekerjaan_impian = pekerjaan_impian;
     }
 
@@ -67,6 +69,14 @@ public class UserModel {
         } else {
             return photo_profil;
         }
+    }
+
+    public String getUniversitas() {
+        return universitas;
+    }
+
+    public void setUniversitas(String universitas) {
+        this.universitas = universitas;
     }
 
     public void setPassword(String password) {

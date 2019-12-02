@@ -33,15 +33,19 @@ import id.co.hope.BuildConfig
 import id.co.hope.app.ubahpassword.UbahPasswordDialog
 import id.co.hope.app.surveysaya.SurveySayaActivity
 import id.co.hope.app.fotopreview.FotoPreviewActivity
+import id.co.hope.app.main.MainViewModel
 
 
 class ProfileFragment : FragmentPermission() {
 
 //    val gson: Gson = Gson()
+lateinit var viewModel: MainViewModel
 
     companion object{
-        fun newInstance(): ProfileFragment {
-            return ProfileFragment()
+        fun newInstance(mainViewModel: MainViewModel): ProfileFragment {
+            val fragment = ProfileFragment()
+            fragment.viewModel = mainViewModel
+            return fragment
         }
     }
 
@@ -54,6 +58,7 @@ class ProfileFragment : FragmentPermission() {
                                       "Ya",
                                         "Tidak", object : AlertDialogBuilder.OnAlertDialog{
                     override fun onPositiveButton(dialog: DialogInterface?) {
+                        viewModel.doLogout(true)
                         LibUi.setSPString(context, Preferences.USER_INTRO, "")
                         HopeFunction.logoutUser(context)
                         startActivity(Intent(context, LoginActivity::class.java))

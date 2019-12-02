@@ -104,7 +104,17 @@
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                                   android:orientation="vertical">
                         <EditText
+                                android:layout_marginTop="@dimen/dimen_16dp"
+                                android:id="@+id/edt_universitas"
+                                android:drawableLeft="@drawable/ic_graduation"
+                                android:hint="Universitas"
+                                style="@style/Edittext.Form"
+                                android:inputType="text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <EditText
                                 android:id="@+id/edt_programstudi"
+                                android:layout_marginTop="@dimen/dimen_16dp"
                                 android:drawableLeft="@drawable/ic_living_room_books_group"
                                 android:hint="Program Studi"
                                 style="@style/Edittext.Form"

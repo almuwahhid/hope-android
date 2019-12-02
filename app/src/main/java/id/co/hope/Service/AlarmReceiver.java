@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 import com.google.gson.Gson;
 import id.co.hope.data.EndPoints;
+import id.co.hope.utils.HopeFunction;
 import id.co.hope.utils.NotificationUtil;
 import lib.almuwahhid.utils.UiLibRequest;
 import org.json.JSONException;
@@ -68,7 +69,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             @Override
             public Map<String, String> requestParam() {
                 HashMap param = new HashMap<String, String>();
-//                param.put("data", gson.toJson(Function.getUserPreference(context)));
+                param.put("data", gson.toJson(HopeFunction.getUserPreference(context)));
                 return param;
             }
 

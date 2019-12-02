@@ -12,11 +12,13 @@ import android.support.v4.view.GravityCompat
 import android.util.Log
 import android.view.MenuItem
 import id.co.hope.R
+import id.co.hope.Service.AlarmReceiver
 import id.co.hope.app.main.checklistjournal.ChecklistJournalFragment
 import id.co.hope.app.main.home.HomeFragment
 import id.co.hope.app.main.profile.ProfileFragment
 import id.co.hope.data.Preferences
 import id.co.hope.data.StringConstant
+import id.co.hope.data.model.UserModel
 import id.co.hope.dialogs.MinatPenggunaDialog.DialogMinatPengguna
 import id.co.hope.module.Activity.HopeActivity
 import id.co.hope.utils.HopeFunction
@@ -35,23 +37,35 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
     internal var mFragmentManager = supportFragmentManager
     lateinit var viewModel : MainViewModel
 
+    private var alarmReceiver: AlarmReceiver? = null
+
+    lateinit var userModel : UserModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        userModel = HopeFunction.getUserPreference(context)
+
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        viewModel.initOpenCheckListJournal().observe(this, Observer {
-            if(it!!){
-                initActiveFragment(1)
-                fragment = checklistFragment
-                initializeNavFragment(fragment!!)
-                nav.getMenu().findItem(R.id.nav_checklist).setChecked(true);
-            }
-        })
+        with(viewModel){
+            initOpenCheckListJournal().observe(this@MainActivity, Observer {
+                if(it!!){
+                    initActiveFragment(1)
+                    fragment = checklistFragment
+                    initializeNavFragment(fragment!!)
+                    nav.getMenu().findItem(R.id.nav_checklist).setChecked(true);
+                }
+            })
+
+            initLogout().observe(this@MainActivity, Observer {
+                alarmReceiver!!.cancelAlarm(this@MainActivity, AlarmReceiver.TYPE_REPEATING);
+            })
+        }
 
         homeFragment = HomeFragment.newInstance(viewModel)
         checklistFragment = ChecklistJournalFragment.newInstance()
-        profileFragment = ProfileFragment.newInstance()
+        profileFragment = ProfileFragment.newInstance(viewModel)
 
         if (savedInstanceState != null) {
             fragment = supportFragmentManager.getFragment(savedInstanceState, "fragment")
@@ -63,6 +77,11 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
 
         if(!LibUi.getSPBoolean(context, Preferences.HOME_INTRO)){
             introChecklistJournal()
+        }
+
+        alarmReceiver = AlarmReceiver()
+        if(!alarmReceiver!!.isAlarmSet(context, AlarmReceiver.TYPE_REPEATING)){
+            alarmReceiver!!.setRepeatingAlarm(this, AlarmReceiver.TYPE_REPEATING,"");
         }
     }
 
@@ -185,8 +204,8 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
 
     override fun onResume() {
         super.onResume()
-        if(HopeFunction.getUserPreference(context).pekerjaan_impian.equals("")){
-            DialogMinatPengguna(context);
+        if(userModel.pekerjaan_impian.equals("") || userModel.universitas.equals("") || userModel.semester.equals("")){
+            DialogMinatPengguna(context, userModel);
         }
     }
 }

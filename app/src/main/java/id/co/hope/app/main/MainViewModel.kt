@@ -7,6 +7,22 @@ import android.arch.lifecycle.ViewModel
 class MainViewModel: ViewModel() {
     internal var openChecklistJournal: MutableLiveData<Boolean>? = null
     internal var introStartSurvey: MutableLiveData<Boolean>? = null
+    internal var logout: MutableLiveData<Boolean>? = null
+
+    fun initLogout(): LiveData<Boolean> {
+        if (logout == null) {
+            logout = MutableLiveData<Boolean>()
+            //            requestPinned.postValue(false);
+            logout!!.postValue(false)
+        }
+        return logout!!
+    }
+
+    fun doLogout(isShow: Boolean) {
+        if (logout != null) {
+            logout!!.postValue(isShow)
+        }
+    }
 
     fun initOpenCheckListJournal(): LiveData<Boolean> {
         if (openChecklistJournal == null) {

@@ -160,6 +160,7 @@ class BiodataActivity : HopePermissionActivity(), DatePickerDialog.OnDateSetList
         forms.add(R.id.edt_programstudi)
         forms.add(R.id.edt_semester)
         forms.add(R.id.edt_pekerjaanimpian)
+        forms.add(R.id.edt_universitas)
     }
 
     private fun validate(){
@@ -169,7 +170,8 @@ class BiodataActivity : HopePermissionActivity(), DatePickerDialog.OnDateSetList
                                     edt_programstudi.text.toString(),
                                     edt_telp.text.toString(),
                                     edt_semester.text.toString(),
-                                    edt_pekerjaanimpian.text.toString())
+                                    edt_pekerjaanimpian.text.toString(),
+                                    edt_universitas.text.toString())
             presenter!!.updateProfile(userModel!!, photo_base64)
         }
     }

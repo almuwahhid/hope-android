@@ -43,6 +43,6 @@ class FotoPreviewActivity : HopeActivity() {
 
                 }
             })
-        img_preview
+
     }
 }

@@ -35,7 +35,7 @@ public class NotificationUtil {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
             // Configure the notification channel.
-            notificationChannel.setDescription("RIDE");
+            notificationChannel.setDescription("H.O.P.E");
             notificationChannel.enableLights(true);
             notificationChannel.setLightColor(ContextCompat.getColor(context, R.color.colorPrimary));
             notificationChannel.setVibrationPattern(new long[]{0, 1000, 500, 1000});
@@ -48,13 +48,13 @@ public class NotificationUtil {
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
 //                .setSmallIcon(R.drawable.logo_24)
-                .setTicker("RIDE")
+                .setTicker("H.O.P.E")
                 //     .setPriority(Notification.PRIORITY_MAX)
                 .setContentTitle("Pengingat Tugas")
-                .setContentText("Ada tugas yang harus kamu kerjakan, lihat sekarang")
-                .setContentInfo("REDE")
+                .setContentText("Ada intervensi yang belum kamu kerjakan, lihat sekarang")
+                .setContentInfo("H.O.P.E")
                 .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText("Ada tugas yang harus kamu kerjakan, lihat sekarang"));
+                        .bigText("Ada intervensi yang belum kamu kerjakan, lihat sekarang"));
 
         String replyLabel = "Enter your reply here";
 
