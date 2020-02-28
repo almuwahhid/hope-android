@@ -148,7 +148,7 @@
                                 android:background="@drawable/button_main"
                                 android:layout_marginBottom="@dimen/dimen_24dp"
                                 android:text="S I M P A N"
-                                style="@style/Button"/>
+                                style="@style/MyButton"/>
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
             </LinearLayout>

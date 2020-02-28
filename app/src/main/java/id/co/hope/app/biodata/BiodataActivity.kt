@@ -76,6 +76,7 @@ class BiodataActivity : HopePermissionActivity(), DatePickerDialog.OnDateSetList
         edt_programstudi.setText(userModel!!.program_studi)
         edt_semester.setText(userModel!!.semester)
         edt_pekerjaanimpian.setText(userModel!!.pekerjaan_impian)
+        edt_universitas.setText(userModel!!.universitas)
     }
 
     private fun initActions(){

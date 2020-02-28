@@ -7,18 +7,42 @@
     android:background="@color/white"
     android:layout_marginBottom="@dimen/dimen_1dp"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_48dp">
-    <TextView
-        android:layout_centerVertical="true"
-        android:text="Pilihan 1"
-        style="@style/Text.Standard"
-        android:id="@+id/tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    android:layout_height="wrap_content">
+    <RelativeLayout android:layout_width="match_parent"
+                    android:id="@+id/lay1"
+                    android:layout_height="@dimen/dimen_48dp">
+        <TextView
+                android:layout_centerVertical="true"
+                android:text="Pilihan 1"
+                style="@style/Text.Standard"
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_below="@+id/lay1"
+                    android:visibility="gone"
+                    android:id="@+id/lay2"
+                    android:layout_marginBottom="@dimen/dimen_8dp"
+                    android:layout_height="wrap_content">
+                    <EditText android:layout_width="match_parent"
+                              android:id="@+id/edt_lain"
+                              style="@style/Edittext.Form"
+                              android:layout_toLeftOf="@+id/img_ok"
+                              android:layout_height="wrap_content"/>
+                    <ImageView android:layout_width="wrap_content"
+                               android:id="@+id/img_ok"
+                               style="@style/clickable"
+                               android:layout_marginLeft="@dimen/dimen_8dp"
+                               android:layout_centerVertical="true"
+                               android:src="@drawable/ic_check_black_24dp"
+                               android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"/>
+    </RelativeLayout>
 </RelativeLayout>

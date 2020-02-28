@@ -79,7 +79,7 @@ class SurveyActivity : HopeActivity(), SurveyView.View {
     }
 
     private fun initDialogByAspek(surveyPayloadModel: SurveyPayloadModel){
-        DialogInfo(context, surveyPayloadModel.data_aspek, "Baik", R.drawable.ic_check_circle_primary_24dp, object : DialogInfo.OnDialogConfirm{
+        DialogInfo(context, surveyPayloadModel.data_aspek, "OK", R.drawable.ic_check_circle_primary_24dp, object : DialogInfo.OnDialogConfirm{
             override fun onDialogConfirmClick() {
                 if(surveyPayloadModel.survey)
                     initDialogBySurveyDone(surveyPayloadModel)
@@ -93,7 +93,7 @@ class SurveyActivity : HopeActivity(), SurveyView.View {
     }
 
     private fun initDialogBySurveyDone(surveyPayloadModel: SurveyPayloadModel){
-        DialogInfo(context, surveyPayloadModel.data_survey, "Terima Kasih Banyak", R.drawable.ic_hope, object : DialogInfo.OnDialogConfirm{
+        DialogInfo(context, surveyPayloadModel.data_survey, "Terima Kasih!", R.drawable.ic_hope, object : DialogInfo.OnDialogConfirm{
             override fun onDialogConfirmClick() {
                 initDialogAnjuranAfterSurveyDone(surveyPayloadModel)
             }
@@ -105,7 +105,7 @@ class SurveyActivity : HopeActivity(), SurveyView.View {
     }
 
     private fun initDialogAnjuranAfterSurveyDone(surveyPayloadModel: SurveyPayloadModel){
-        DialogInfo(context, "Mantap, survey selesai", "Siap", R.drawable.ic_rating, object : DialogInfo.OnDialogConfirm{
+        DialogInfo(context, "Survey sudah selesai", "OK", R.drawable.ic_rating, object : DialogInfo.OnDialogConfirm{
             override fun onDialogConfirmClick() {
 //                initDialogAnjuranAfterSurveyDone(surveyPayloadModel)
                 finish()

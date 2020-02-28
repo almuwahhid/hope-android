@@ -18,6 +18,10 @@
         <item name="android:actionBarStyle">@style/ToolBarThemeBackgroundActionBar</item>
         <item name="actionBarStyle">@style/ToolBarThemeBackgroundActionBar</item>
     </style>
+    <style name="MyButton" parent="Button">
+        <item name="android:layout_marginTop">@dimen/margin_standard</item>
+        <item name="android:textColor">@color/grey_800</item>
+    </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -47,6 +51,10 @@
     </style>
 
     <style name="Text.Standard.OneRow" parent="Text.Standard">
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Text.Standard.OneRow.Bold" parent="TextView.Bold">
         <item name="android:maxLines">1</item>
     </style>
 

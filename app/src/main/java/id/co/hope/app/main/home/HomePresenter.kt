@@ -40,13 +40,13 @@ open class HomePresenter (context: Context?, view: HomeView.View) : BasePresente
                             )
                         }
                         "new" -> {
-                            view!!.onGotoSurvey("Sepertinya Anda anak baru ya! gass kan sajja", "Coba sekarang")
+                            view!!.onGotoSurvey("Anda belum melakukan survey, silahkan melakukannya untuk mengetahui diri anda lebih detail dalam hal karir. Selamat mencoba!", "MENGENAL DIRIKU")
                         }
                         "second" -> {
-                            view!!.onGotoSurvey("Kamu udah pernah ngikutin lebih dari sekali, gimana rasanya?", "Coba lagi")
+                            view!!.onGotoSurvey("Wah selamat! Nampaknya sekarang Anda sudah mengetahui berbagai kegiatan yang menunjang karir Anda.", "COBA LAGI")
                         }
                         "first" -> {
-                            view!!.onGotoSurvey("Eh kamu udah coba sekali, selamat ya", "Coba lagi ah")
+                            view!!.onGotoSurvey("Wah selamat! Nampaknya sekarang Anda sudah mengetahui berbagai kegiatan yang menunjang karir Anda.", "COBA LAGI")
                         }
                     }
                 } catch (e: JSONException) {

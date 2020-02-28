@@ -18,10 +18,8 @@ class GreetingActivity : HopeActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_greeting)
 
-
-
         for (x in GreetingHelper.greetingData()){
-            slider.addSlider(TextSliderView(context, x.title, x.description))
+            slider.addSlider(TextSliderView(context, x.title, x.description, x.img_drawable))
         }
         slider.setPresetTransformer(SliderLayout.Transformer.Default)
         slider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom)

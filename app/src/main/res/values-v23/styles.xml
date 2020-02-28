@@ -4,7 +4,7 @@
         <item name="android:padding">@dimen/dimen_12dp</item>
         <item name="android:textSize">13sp</item>
         <item name="android:drawablePadding">@dimen/dimen_8dp</item>
-        <item name="android:drawableTint">@color/colorPrimary</item>
+        <item name="android:drawableTint">@color/colorPrimarySecond</item>
         <item name="android:background">@drawable/field_filled</item>
     </style>
     <style name="Edittext.Form.Disable" parent="EditText">

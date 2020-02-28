@@ -22,13 +22,13 @@
                     android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:orientation="vertical">
                 <TextView android:id="@+id/tv_title"
-                          android:textColor="@color/white"
+                          android:textColor="@color/grey_800"
                           android:layout_width="wrap_content" android:layout_height="wrap_content"
                           style="@style/Text.SubSingleTitle.Bold"
                           android:layout_marginLeft="@dimen/dimen_12dp"
                           android:text="H.O.P.E"/>
                 <TextView android:id="@+id/tv_subtitle"
-                          android:textColor="@color/white"
+                          android:textColor="@color/grey_800"
                           android:layout_width="wrap_content" android:layout_height="wrap_content"
                           style="@style/Text.Standard.OneRow"
                           android:text="Help Occupation Performance Effectively" app:layout_constraintStart_toEndOf="@+id/imageView2"

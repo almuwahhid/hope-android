@@ -30,7 +30,7 @@
         <Button
             android:id="@+id/btn_submit"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/white"
+            android:textColor="@color/grey_800"
             android:text="O K"
             android:background="@drawable/button_main"
             android:layout_marginTop="12dp"

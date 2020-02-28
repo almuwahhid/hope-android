@@ -64,7 +64,7 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
         }
 
         homeFragment = HomeFragment.newInstance(viewModel)
-        checklistFragment = ChecklistJournalFragment.newInstance()
+        checklistFragment = ChecklistJournalFragment.newInstance(viewModel)
         profileFragment = ProfileFragment.newInstance(viewModel)
 
         if (savedInstanceState != null) {
@@ -88,8 +88,8 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
     private fun introChecklistJournal(){
         HopeFunction.showIntroCase(this,
             findViewById(R.id.nav_checklist),
-            "Checklist Journal",
-            getString(R.string.intro_dummy),
+            "Kegiatanku",
+            "Berikut ini merupakan serangkaian kegiatan yang dapat Anda lakukan untuk mencari tahu karir yang sesuai dengan diri Anda",
             true,
             object : LibUi.OnEventChange {
                 override fun onChange() {
@@ -103,7 +103,7 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
         HopeFunction.showIntroCase(this,
             findViewById(R.id.nav_profile),
             "Profile",
-            getString(R.string.intro_dummy),
+            "Feature ini berisi data diri Anda, rangkuman hasil survey yang sudah dilakukan serta fasilitas untuk berdiskusi dengan Konselor.",
             true,
             object : LibUi.OnEventChange {
                 override fun onChange() {
@@ -204,6 +204,7 @@ class MainActivity : HopeActivity(), BottomNavigationView.OnNavigationItemSelect
 
     override fun onResume() {
         super.onResume()
+        userModel = HopeFunction.getUserPreference(context)
         if(userModel.pekerjaan_impian.equals("") || userModel.universitas.equals("") || userModel.semester.equals("")){
             DialogMinatPengguna(context, userModel);
         }

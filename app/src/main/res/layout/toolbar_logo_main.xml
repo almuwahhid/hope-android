@@ -5,12 +5,12 @@
               android:layout_height="wrap_content">
     <ImageView android:layout_width="@dimen/dimen_128dp"
                android:src="@drawable/ic_hope"
-               android:layout_marginTop="@dimen/dimen_56dp"
+               android:layout_marginTop="@dimen/dimen_16dp"
                android:layout_height="@dimen/dimen_96dp"
-               android:layout_marginBottom="@dimen/dimen_16dp"
+               android:layout_marginBottom="@dimen/dimen_8dp"
                android:layout_gravity="center_horizontal"/>
     <TextView android:layout_width="wrap_content"
-              android:textColor="@color/colorPrimary"
+              android:textColor="@color/colorPrimarySecond"
               android:layout_gravity="center_horizontal"
               android:layout_height="wrap_content"
               android:textSize="@dimen/dimen_32dp"
@@ -20,6 +20,6 @@
               android:layout_gravity="center_horizontal"
               android:layout_height="wrap_content"
               style="@style/Text.Standard"
-              android:text="Hello There Yeah"
-              android:layout_marginBottom="@dimen/dimen_56dp"/>
+              android:text="Help Occupation Performance Effectively"
+              android:layout_marginBottom="@dimen/dimen_8dp"/>
 </LinearLayout>

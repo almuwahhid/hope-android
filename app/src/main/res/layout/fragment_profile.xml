@@ -160,7 +160,7 @@
                 android:layout_height="@dimen/dimen_24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:tint="@color/colorPrimary"
+                android:tint="@color/colorPrimarySecond"
                 android:src="@drawable/ic_vpn_key_black_24dp" />
 
         <TextView
@@ -194,7 +194,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
-                android:tint="@color/colorPrimary"
+                android:tint="@color/colorPrimarySecond"
                 android:src="@drawable/ic_chevron_right_black_24dp" />
 
     </RelativeLayout>
@@ -213,7 +213,7 @@
                 android:layout_height="@dimen/dimen_24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:tint="@color/colorPrimary"
+                android:tint="@color/colorPrimarySecond"
                 android:src="@drawable/ic_people_black_24dp" />
 
         <TextView
@@ -247,7 +247,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
-                android:tint="@color/colorPrimary"
+                android:tint="@color/colorPrimarySecond"
                 android:src="@drawable/ic_chevron_right_black_24dp" />
 
     </RelativeLayout>
@@ -266,7 +266,7 @@
                 android:layout_height="@dimen/dimen_24dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:tint="@color/colorPrimary"
+                android:tint="@color/colorPrimarySecond"
                 android:src="@drawable/ic_call_black_24dp" />
 
         <TextView
@@ -277,7 +277,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_toLeftOf="@+id/img_chevron_biodata_logout"
                 android:layout_toRightOf="@id/img_icon_biodata_logout"
-                android:text="Hubungi Konseler"
+                android:text="Hubungi Konselor"
                 android:textColor="@color/grey_700"
                 android:textStyle="bold" />
 
@@ -301,7 +301,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
-                android:tint="@color/colorPrimary"
+                android:tint="@color/colorPrimarySecond"
                 android:src="@drawable/ic_chevron_right_black_24dp" />
     </RelativeLayout>
     <android.support.v7.widget.CardView
@@ -332,7 +332,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_info_black_24dp"
-                    android:tint="@color/colorPrimary" />
+                    android:tint="@color/colorPrimarySecond" />
 
             <TextView
                     android:id="@+id/tv_info"
@@ -373,7 +373,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_power_settings_new_black_24dp"
-                    android:tint="@color/colorPrimary" />
+                    android:tint="@color/colorPrimarySecond" />
 
             <TextView
                     android:id="@+id/txtLogout"

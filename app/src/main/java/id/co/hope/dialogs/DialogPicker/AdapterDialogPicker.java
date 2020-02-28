@@ -6,10 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.*;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -52,21 +49,41 @@ public class AdapterDialogPicker extends RecyclerView.Adapter<AdapterDialogPicke
             holder.checkbox.setChecked(false);
         }
 
+        holder.edt_lain.setText(keyword);
+
         holder.lay_picker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickPicker.onClickPicker(pickerModel);
+                onClicked(holder, pickerModel);
             }
         });
         holder.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
-                    onClickPicker.onClickPicker(pickerModel);
+                    onClicked(holder, pickerModel);
                 }
             }
         });
 
+        holder.img_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pickerModel.setName(holder.edt_lain.getText().toString());
+                onClickPicker.onClickPicker(pickerModel);
+            }
+        });
+
+    }
+
+    private void onClicked(AdapterDialogPicker.Holder holder, PickerModel pickerModel){
+        if(pickerModel.getId().equals("11")){
+            holder.lay2.setVisibility(View.VISIBLE);
+            holder.edt_lain.requestFocus();
+        } else {
+            holder.lay2.setVisibility(View.GONE);
+            onClickPicker.onClickPicker(pickerModel);
+        }
     }
 
     @Override
@@ -81,6 +98,12 @@ public class AdapterDialogPicker extends RecyclerView.Adapter<AdapterDialogPicke
         TextView tv;
         @BindView(R.id.checkbox)
         CheckBox checkbox;
+        @BindView(R.id.edt_lain)
+        EditText edt_lain;
+        @BindView(R.id.lay2)
+        RelativeLayout lay2;
+        @BindView(R.id.img_ok)
+        ImageView img_ok;
 
         public Holder(View itemView) {
             super(itemView);

@@ -25,7 +25,7 @@
                 <TextView android:layout_width="wrap_content"
                           android:layout_marginTop="@dimen/dimen_8dp"
                           android:layout_marginBottom="@dimen/dimen_8dp"
-                          android:textColor="@color/colorPrimary"
+                          android:textColor="@color/colorPrimarySecond"
                           android:layout_height="wrap_content"
                           style="@style/Text.SingleField.Regular"
                           android:text="Isi semua kolom dengan benar!"/>
@@ -94,7 +94,7 @@
                         android:background="@drawable/button_main"
                         android:layout_marginBottom="@dimen/dimen_24dp"
                         android:text="R E G I S T E R"
-                        style="@style/Button"/>
+                        style="@style/MyButton"/>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
@@ -112,9 +112,9 @@
                 android:layout_height="wrap_content"/>
         <TextView
                 android:id="@+id/tv_login"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/grey_700"
                 android:text="Login sekarang"
-                style="@style/Text.Standard.OneRow"
+                style="@style/Text.Standard.OneRow.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
     </LinearLayout>

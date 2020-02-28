@@ -1,15 +1,25 @@
 package id.co.hope.app.greeting.helper
 
+import id.co.hope.R
 import id.co.hope.app.greeting.model.GreetingModel
 
 class GreetingHelper {
     companion object{
         fun greetingData(): MutableList<GreetingModel>{
             var greetingList: MutableList<GreetingModel> = ArrayList()
-            var greetingModel = GreetingModel("Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+            var greetingModel = GreetingModel("SURVEY MENGENAI KEINGINAN KARIRMU",
+                "Survey yang Anda lakukan pada aplikasi ini akan menunjukkan pengetahuan diri Anda dalam mengetahui dan mencapai  karir yang diinginkan.",
+                            R.drawable.slider1)
             greetingList.add(greetingModel)
 
-            greetingModel = GreetingModel("Lorem Ipsum", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+            greetingModel = GreetingModel("KEGIATANKU",
+                "Feature ini akan memberikan serangkaian kegiatan yang dapat membantu Anda dalam melakukan eksplorasi karir serta komitmen Anda dalam mencapai karir yang diinginkan.",
+                            R.drawable.slider2)
+            greetingList.add(greetingModel)
+
+            greetingModel = GreetingModel("ARTIKEL KARIR",
+                "Feature ini menyediakan bacaan mengenai informasi, tren dan perkembangan karir saat ini.",
+                R.drawable.slider3)
             greetingList.add(greetingModel)
 
             return greetingList

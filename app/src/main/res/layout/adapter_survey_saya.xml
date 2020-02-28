@@ -35,7 +35,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="1"
-                                android:textColor="@color/white"
+                                android:textColor="@color/colorPrimarySecond"
                                 android:textSize="@dimen/dimen_32dp"
                                 android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
@@ -93,7 +93,7 @@
                 <TextView
                         android:layout_gravity="right"
                         android:id="@+id/tv_nilai"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorPrimarySecond"
                         android:text="30 poin"
                         style="@style/Text.Caption.Bold"
                         android:layout_width="wrap_content"

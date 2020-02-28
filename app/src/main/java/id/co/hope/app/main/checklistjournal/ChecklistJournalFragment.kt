@@ -12,6 +12,7 @@ import id.ac.uny.riset.ride.data.model.SurveyModel
 import id.ac.uny.riset.ride.data.model.TaskPertanyaanModel
 import id.co.hope.R
 import id.co.hope.app.artikel.model.ArtikelModel
+import id.co.hope.app.main.MainViewModel
 import kotlinx.android.synthetic.main.layout_checklistjournal_new.*
 import lib.almuwahhid.Activity.FragmentPermission
 import id.co.hope.app.main.checklistjournal.CheckListJournalPresenter
@@ -31,10 +32,14 @@ class ChecklistJournalFragment : FragmentPermission(), CheckListJournalView.View
     lateinit var presenter: CheckListJournalPresenter
     var fromRefresh = false
 
+    lateinit var viewModel: MainViewModel
+
 
     companion object{
-        fun newInstance(): ChecklistJournalFragment {
-            return ChecklistJournalFragment()
+        fun newInstance(mainViewModel: MainViewModel): ChecklistJournalFragment {
+            val fragment = ChecklistJournalFragment()
+            fragment.viewModel = mainViewModel
+            return fragment
         }
     }
 
@@ -80,7 +85,7 @@ class ChecklistJournalFragment : FragmentPermission(), CheckListJournalView.View
             presenter.checkSurvey()
         }
         if(isDone){
-            DialogInfo(context, "Selamat kamu sudah menyelesaikan semua intervensi yang ada, semoga dapat membantumu dalam mencari pekerjaan ya", "Baik, akan saya lakukan", R.drawable.ic_motivation, object : DialogInfo.OnDialogConfirm{
+            DialogInfo(context, "Selamat! Anda sudah melakukan seluruh kegiatan. Semoga proses yang sudah Anda lalui, dapat membantu dalam menemukan karir yang sesuai dengan diri Anda.", "Ayo lakukan!", R.drawable.ic_motivation, object : DialogInfo.OnDialogConfirm{
                 override fun onDialogConfirmClick() {
 
                 }
@@ -107,13 +112,13 @@ class ChecklistJournalFragment : FragmentPermission(), CheckListJournalView.View
         this.taskIntervensiModels!!.addAll(taskIntervensiModels)
         checklistJournalAdapter.notifyDataSetChanged()
         if(!fromRefresh){
-            initDialogConfirm("Hai, kamu memiliki beberapa tugas yang harus dikerjakan! Yuk mulai!", "Okay, akan kumulai!", R.drawable.ic_hope, object : DialogInfo.OnDialogConfirm{
+            initDialogConfirm("Anda memiliki serangkaian kegiatan yang harus dilakukan untuk menemukan karir yang sesuai dengan diri Anda. Silahkan cek segera!", "Lihat Kegiatanku", R.drawable.ic_hope, object : DialogInfo.OnDialogConfirm{
                 override fun onCancelConfirmClick() {
 
                 }
 
                 override fun onDialogConfirmClick() {
-
+                    viewModel.updateChecklistJournal(true)
                 }
             })
         }
@@ -126,8 +131,8 @@ class ChecklistJournalFragment : FragmentPermission(), CheckListJournalView.View
     private fun introChecklistJournal(){
         HopeFunction.showIntroCase(activity,
             img_calendar,
-            "Survey Aktif",
-            "Ini adalah tanggal survey aktif untuk task intervensi yang harus kamu kerjakan, tekan salah satu daftar intervensi untuk mengerjakan intervensi sesuai tanggal yang berlaku",
+            "Alarm Kegiatan",
+            "Berikut ini merupakan Alarm/ pengingat bagi Anda untuk melakukan serangkaian kegiatan yang dapat membantu Anda dalam mengetahui karir yang sesuai dengan diri. Silahkan cermati berbagai rekomendasi kegiatan yang bisa Anda lakukan dan tekan salah satu daftar kegiatan lalu pilih \"selesai\" setelah Anda benar-benar melakukan kegiatan tersebut. Serangkaian kegiatan ini dapat dilakukan dalam maksimal 7 hari. Selamat berkegiatan!",
             true,
             object : LibUi.OnEventChange {
                 override fun onChange() {

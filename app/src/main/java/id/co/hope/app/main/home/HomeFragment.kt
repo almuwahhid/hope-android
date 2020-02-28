@@ -118,8 +118,8 @@ class HomeFragment : FragmentPermission(), HomeView.View {
     private fun introStartSurvey(){
         HopeFunction.showIntroCase(activity,
             btn_survey,
-            "Memulai Survey",
-            "Kamu bisa memulai survey dengan menekan tombol ini",
+            "Mengenal Diriku",
+            "Silahkan memulai survey dengan menekan tombol ini",
             true,
             object : LibUi.OnEventChange {
                 override fun onChange() {
@@ -134,19 +134,19 @@ class HomeFragment : FragmentPermission(), HomeView.View {
     }
 
     override fun onGotoChecklist(surveyModel: SurveyModel, taskIntervensiModels: MutableList<TaskPertanyaanModel>) {
-        tv_description.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\nAnda memiliki list jurnal yang harus dikerjakan, yuk lihat sekarang...")
-        btn_survey.setText("Lihat Checklist Journal")
+        tv_description.setText("Hai calon penerus bangsa! Sudah memikirkan karir Anda di masa depan? Apakah eksplorasi dan keyakinan Anda terhadap pilihan tersebut sudah mantap? Cobalah ikuti survey berikut ini untuk mengetahui kondisi diri Anda sekarang terhadap pilihan karir di masa depan. Selamat mencoba!\n\nAnda memiliki serangkaian kegiatan yang harus dilakukan untuk menemukan karir yang sesuai dengan diri Anda. Silahkan cek segera! ")
+        btn_survey.setText("LIHAT KEGIATANKU")
         btn_survey.setOnClickListener({
             viewModel.updateChecklistJournal(true)
         })
     }
 
     override fun onGotoSurvey(message_survey: String, message_button : String) {
-        tv_description.setText(resources.getString(R.string.home_description))
+        tv_description.setText("Hai calon penerus bangsa! Sudah memikirkan karir Anda di masa depan? Apakah eksplorasi dan keyakinan Anda terhadap pilihan tersebut sudah mantap? Cobalah ikuti survey berikut ini untuk mengetahui kondisi diri Anda sekarang terhadap pilihan karir di masa depan. Selamat mencoba!")
         btn_survey.setOnClickListener({
             presenter.createSurvey()
         })
-        btn_survey.setText("M E N G E N A L   I M P I A N M U")
+        btn_survey.setText("MULAI!")
     }
 
     override fun onCreateSurvey(surveyModel: SurveyModel) {

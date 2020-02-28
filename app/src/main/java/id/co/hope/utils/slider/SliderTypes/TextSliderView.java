@@ -25,6 +25,7 @@
 package id.co.hope.utils.slider.SliderTypes;
 
 import android.content.Context;
+import android.media.Image;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,15 +41,21 @@ public class TextSliderView extends BaseSliderView{
     public TextSliderView(Context context, String title, String description) {
         super(context, title, description);
     }
+    public TextSliderView(Context context, String title, String description, int img_slider) {
+        super(context, title, description, img_slider);
+    }
 
     @Override
     public View getView() {
         View v = LayoutInflater.from(getContext()).inflate(R.layout.slider_layout_custom,null);
         TextView tv_title = (TextView)v.findViewById(R.id.tv_title);
         TextView tv_description = (TextView)v.findViewById(R.id.tv_description);
+        ImageView img_slide = (ImageView)v.findViewById(R.id.img_slide);
 //        tv_title.setText(Html.fromHtml(getDescription()));
         tv_title.setText(getTitle());
         tv_description.setText(getDescription());
+        img_slide.setImageDrawable(getContext().getResources().getDrawable(getImg_drawable()));
+
 //        bindEventAndShow(v, target);
         return v;
     }

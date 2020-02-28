@@ -47,7 +47,7 @@ public class NotificationUtil {
         notificationBuilder.setAutoCancel(true)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setWhen(System.currentTimeMillis())
-//                .setSmallIcon(R.drawable.logo_24)
+                .setSmallIcon(R.drawable.ic_hope)
                 .setTicker("H.O.P.E")
                 //     .setPriority(Notification.PRIORITY_MAX)
                 .setContentTitle("Pengingat Tugas")

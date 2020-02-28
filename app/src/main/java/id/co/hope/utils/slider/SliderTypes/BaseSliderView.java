@@ -70,6 +70,7 @@ public abstract class BaseSliderView {
 
     private String mDescription;
     private String mTitle;
+    private int img_drawable;
 
     /**
      * Scale type of the image.
@@ -89,6 +90,14 @@ public abstract class BaseSliderView {
         mContext = context;
         mDescription = description;
         mTitle = title;
+        this.mBundle = new Bundle();
+    }
+
+    protected BaseSliderView(Context context, String title, String description, int img_drawable) {
+        mContext = context;
+        mDescription = description;
+        mTitle = title;
+        this.img_drawable = img_drawable;
         this.mBundle = new Bundle();
     }
 
@@ -197,6 +206,10 @@ public abstract class BaseSliderView {
 
     public String getTitle() {
         return mTitle;
+    }
+
+    public int getImg_drawable() {
+        return img_drawable;
     }
 
     public Context getContext(){
